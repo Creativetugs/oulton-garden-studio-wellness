@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Massage, aromatherapy and wellness treatments with Louise Moore at The Barn, Oulton Smithy, Cheshire.">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Oulton Garden Studio | Wellness with Louise Moore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #29372e;
+      --muted: #68736a;
+      --sage: #71816b;
+      --sage-dark: #53664f;
+      --sage-pale: #e9ede4;
+      --cream: #f7f5ef;
+      --paper: #fffefa;
+      --sand: #e9e1d3;
+      --line: #e6e5dc;
+      --gold: #b79562;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 18px 55px rgba(42, 55, 45, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.65; }
+    img { display: block; width: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .announcement { padding: 9px 20px; text-align: center; color: #fff; background: #26372d; font-size: 12px; letter-spacing: .04em; }
+    .announcement a { color: #e5d7b9; text-decoration: underline; text-underline-offset: 3px; }
+    .topline { display:flex; justify-content:space-between; align-items:center; padding: 12px max(5vw, 22px); background:#f1f0e9; color:var(--muted); font-size:12px; letter-spacing:.06em; }
+    .topline span:last-child { text-align:right; }
+    header { position:sticky; top:0; z-index:20; background:rgba(255,254,250,.94); backdrop-filter: blur(14px); border-bottom:1px solid rgba(230,229,220,.8); }
+    .nav-wrap { max-width:1240px; margin:auto; padding:17px 28px; display:flex; align-items:center; justify-content:space-between; gap:25px; }
+    .brand { display:flex; align-items:center; gap:12px; min-width:220px; }
+    .brand-logo { width:58px; height:58px; object-fit:contain; mix-blend-mode:multiply; }
+    .brand-name { line-height:1.15; } .brand-name strong { white-space:nowrap; } .menu-intro { max-width:760px; margin:-22px auto 42px; text-align:center; color:var(--muted); font-size:13px; line-height:1.9; } .treatment-card { background:#fffefa; border:1px solid var(--line); padding:27px 25px 25px; display:flex; flex-direction:column; min-height:100%; } .treatment-top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; } .treatment-card h3 { font-size:22px; margin:0 0 8px; } .treatment-price { color:var(--sage-dark); font-family:var(--serif); font-size:24px; white-space:nowrap; } .treatment-meta { color:#8b927f; font-size:10px; text-transform:uppercase; letter-spacing:.12em; margin:3px 0 15px; } .treatment-card p { color:var(--muted); font-size:13px; line-height:1.8; margin:0 0 20px; } .treatment-card .text-link { margin-top:auto; align-self:flex-start; } .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; } .menu-note { margin:38px auto 0; max-width:900px; text-align:center; color:#697267; font-size:12px; line-height:1.9; } .mobile-update { margin-top:18px; padding:17px 20px; border-left:2px solid var(--gold); background:rgba(255,255,255,.55); color:#596457; font-size:13px; line-height:1.8; } .brand-lockup { display:flex; align-items:center; gap:12px; }
+    .brand-name strong { display:block; font-family:var(--serif); font-size:17px; font-weight:500; letter-spacing:.01em; }
+    .brand-name small { color:var(--muted); font-size:9px; letter-spacing:.2em; text-transform:uppercase; }
+    nav { display:flex; align-items:center; gap:27px; }
+    nav a { font-size:12px; color:#536056; transition:color .2s; }
+    nav a:hover { color:var(--gold); }
+    .nav-cta, .btn { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--sage-dark); background:var(--sage-dark); color:white; padding:13px 22px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; transition:.25s; cursor:pointer; }
+    .nav-cta:hover, .btn:hover { background:#3e5140; transform:translateY(-2px); }
+    .menu-toggle { display:none; border:0; background:none; color:var(--ink); font-size:25px; cursor:pointer; }
+    .hero { min-height:660px; display:grid; grid-template-columns: 1fr 1fr; background:var(--cream); }
+    .hero-copy { display:flex; flex-direction:column; justify-content:center; padding:85px max(6vw,35px) 85px max(8vw,45px); position:relative; }
+    .eyebrow { color:var(--sage-dark); font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; display:flex; align-items:center; gap:12px; }
+    .eyebrow:before { content:""; width:30px; height:1px; background:var(--gold); }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { font-family:var(--serif); font-weight:400; line-height:1.13; }
+    h1 { font-size:clamp(45px,5.4vw,76px); max-width:600px; margin:25px 0 23px; letter-spacing:-.035em; }
+    h1 em, h2 em { color:var(--sage); font-weight:400; }
+    .hero-copy > p { max-width:480px; color:#68736a; font-size:15px; line-height:1.9; margin-bottom:30px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .btn-outline { display:inline-flex; align-items:center; justify-content:center; padding:13px 22px; border:1px solid #c7cbbf; color:var(--ink); font-size:11px; letter-spacing:.12em; text-transform:uppercase; transition:.2s; }
+    .btn-outline:hover { border-color:var(--sage-dark); background:white; }
+    .hero-note { margin-top:44px; color:#7b8378; font-size:11px; letter-spacing:.07em; }
+    .hero-image { min-height:660px; position:relative; overflow:hidden; }
+    .hero-image img { height:100%; position:absolute; inset:0; }
+    .hero-image:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(25,39,29,.08),transparent 40%),linear-gradient(0deg,rgba(22,35,25,.2),transparent 35%); }
+    .image-caption { position:absolute; z-index:1; bottom:32px; right:35px; color:white; font-family:var(--serif); font-size:17px; font-style:italic; }
+    .intro { max-width:950px; margin:auto; padding:110px 28px 105px; text-align:center; }
+    .intro h2, .section-heading h2 { font-size:clamp(36px,4vw,52px); margin:18px 0 20px; }
+    .intro p { max-width:710px; margin:0 auto; color:var(--muted); font-size:15px; line-height:2; }
+    .intro .signature { margin-top:26px; color:var(--sage-dark); font-family:var(--serif); font-size:24px; font-style:italic; }
+    .services { background:#f3f3ec; padding:100px 28px 110px; }
+    .container { max-width:1160px; margin:auto; }
+    .section-heading { text-align:center; max-width:680px; margin:0 auto 55px; }
+    .section-heading p { color:var(--muted); font-size:14px; line-height:1.9; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .service-card { background:var(--paper); min-width:0; box-shadow:0 8px 30px rgba(45,57,46,.035); transition:transform .25s, box-shadow .25s; }
+    .service-card:hover { transform:translateY(-6px); box-shadow:var(--shadow); }
+    .service-card img { height:230px; }
+    .service-body { padding:25px 25px 28px; }
+    .service-body .number { color:var(--gold); font-size:10px; letter-spacing:.18em; }
+    .service-body h3 { font-size:25px; margin:10px 0 12px; }
+    .service-body p { color:var(--muted); font-size:13px; line-height:1.85; min-height:73px; margin-bottom:18px; }
+    .text-link { color:var(--sage-dark); font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; border-bottom:1px solid #b9c1b1; padding-bottom:5px; }
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:8%; align-items:center; padding:110px 28px; max-width:1160px; margin:auto; }
+    .about-photos { position:relative; padding:0 55px 45px 0; }
+    .about-photos img:first-child { height:510px; }
+    .about-photos img:last-child { position:absolute; width:43%; height:205px; object-fit:cover; right:0; bottom:0; border:10px solid var(--paper); }
+    .about-copy h2 { font-size:clamp(38px,4vw,52px); margin:18px 0 22px; }
+    .about-copy p { color:var(--muted); font-size:14px; line-height:2; }
+    .about-copy .btn { margin-top:15px; }
+    .values { background:#34463a; color:#fff; padding:76px 28px; }
+    .values-grid { max-width:1120px; margin:auto; display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+    .value { text-align:center; padding:8px; }
+    .value-icon { width:48px; height:48px; margin:0 auto 18px; border:1px solid #9eae9c; border-radius:50%; display:grid; place-items:center; color:#d6d9c8; font-family:var(--serif); font-size:22px; }
+    .value h3 { font-size:20px; margin-bottom:9px; }
+    .value p { color:#d0d8ce; font-size:12px; line-height:1.8; margin:0; }
+    .mobile { display:grid; grid-template-columns:1fr 1fr; background:var(--cream); }
+    .mobile img { height:520px; }
+    .mobile-copy { padding:80px max(7vw,35px); display:flex; flex-direction:column; justify-content:center; }
+    .mobile-copy h2 { font-size:clamp(37px,4vw,51px); margin:18px 0; }
+    .mobile-copy p { color:var(--muted); font-size:14px; line-height:1.9; max-width:460px; }
+    .testimonials { padding:105px 28px; background:#fffefa; }
+    .testimonial-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .quote { border:1px solid var(--line); padding:30px 27px; background:#fff; }
+    .stars { color:var(--gold); letter-spacing:4px; font-size:13px; margin-bottom:17px; }
+    .quote blockquote { margin:0 0 22px; color:#566258; font-family:var(--serif); font-size:18px; line-height:1.65; }
+    .quote strong { display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+    .quote small { color:#92988f; font-size:10px; }
+    .quote .source { color:#8a927f; font-size:9px; letter-spacing:.1em; text-transform:uppercase; margin-top:13px; }
+    .contact { background:var(--sage-pale); padding:100px 28px; }
+    .contact-wrap { max-width:1080px; margin:auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:8%; align-items:start; }
+    .contact-copy h2 { font-size:clamp(38px,4vw,52px); margin:18px 0; }
+    .contact-copy p { color:var(--muted); font-size:14px; line-height:1.9; }
+    .contact-detail { margin-top:30px; display:grid; gap:14px; color:#536253; font-size:13px; }
+    .contact-detail a { text-decoration:underline; text-underline-offset:3px; }
+    form { background:#fffefa; padding:35px; box-shadow:0 15px 45px rgba(42,55,45,.07); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+    .field { margin-bottom:17px; }
+    label { display:block; color:#536056; font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:7px; }
+    input,select,textarea { width:100%; border:1px solid #e1e4db; background:#fff; color:var(--ink); padding:13px 14px; outline:none; font-size:13px; border-radius:0; }
+    input:focus,select:focus,textarea:focus { border-color:var(--sage); box-shadow:0 0 0 3px rgba(113,129,107,.12); }
+    textarea { min-height:115px; resize:vertical; }
+    form .btn { width:100%; border:0; }
+    .form-note { color:#8a9287; font-size:10px; margin:12px 0 0; line-height:1.6; }
+    .form-status { display:none; margin-top:14px; color:var(--sage-dark); font-size:12px; }
+    .final-cta { padding:85px 25px; text-align:center; background:#fffefa; }
+    .final-cta h2 { font-size:clamp(36px,4vw,50px); margin:18px 0; }
+    .final-cta p { color:var(--muted); font-size:14px; margin-bottom:27px; }
+    footer { background:#26372d; color:#e8ece4; padding:55px 28px 25px; }
+    .footer-main { max-width:1160px; margin:auto; display:flex; justify-content:space-between; gap:35px; padding-bottom:38px; }
+    .footer-brand { max-width:370px; }
+    .footer-brand .brand-logo { width:58px; height:58px; object-fit:contain; background:#fff; border-radius:50%; mix-blend-mode:normal; }
+    .footer-brand p { color:#c1cbc0; font-size:12px; line-height:1.9; margin-top:20px; }
+    .footer-links { display:flex; gap:65px; }
+    .footer-links h4 { color:#d8c7a5; font-size:10px; letter-spacing:.15em; text-transform:uppercase; margin:0 0 15px; }
+    .footer-links a { display:block; color:#d1d8cf; font-size:12px; margin:8px 0; }
+    .copyright { max-width:1160px; margin:auto; border-top:1px solid rgba(255,255,255,.16); padding-top:20px; color:#aeb9ae; font-size:10px; display:flex; justify-content:space-between; gap:20px; }
+    @media (max-width:900px) {
+      nav { gap:15px; } nav a { font-size:11px; }
+      .hero { min-height:570px; } .hero-image { min-height:570px; }
+      .service-grid { grid-template-columns:repeat(2,1fr); }
+      .about { gap:5%; }
+      .values-grid { grid-template-columns:repeat(2,1fr); row-gap:35px; }
+      .contact-wrap { gap:4%; }
+    }
+    @media (max-width:700px) {
+      .topline { font-size:10px; padding:9px 16px; }
+      .nav-wrap { padding:13px 19px; }
+      .brand { min-width:0; }
+      .menu-toggle { display:block; }
+      nav { display:none; position:absolute; top:100%; left:0; right:0; padding:18px 22px 24px; background:#fffefa; border-bottom:1px solid var(--line); flex-direction:column; align-items:stretch; gap:0; box-shadow:0 15px 25px rgba(40,50,40,.08); }
+      nav.open { display:flex; }
+      nav a { padding:12px 0; border-bottom:1px solid #efeee8; font-size:13px; }
+      nav .nav-cta { margin-top:15px; text-align:center; }
+      .hero { grid-template-columns:1fr; }
+      .hero-copy { padding:75px 26px 55px; }
+      h1 { font-size:49px; }
+      .hero-image { min-height:440px; }
+      .intro { padding:75px 25px; }
+      .services { padding:75px 20px; }
+      .service-grid { grid-template-columns:1fr; gap:16px; } .menu-grid { grid-template-columns:1fr; }
+      .service-card img { height:245px; }
+      .service-body p { min-height:0; }
+      .about { grid-template-columns:1fr; padding:75px 24px; gap:45px; }
+      .about-photos { padding-right:35px; }
+      .about-photos img:first-child { height:390px; }
+      .about-photos img:last-child { height:155px; border-width:7px; }
+      .values { padding:65px 20px; }
+      .values-grid { gap:28px 12px; }
+      .mobile { grid-template-columns:1fr; }
+      .mobile img { height:360px; }
+      .mobile-copy { padding:65px 25px; }
+      .testimonials { padding:75px 20px; }
+      .testimonial-grid { grid-template-columns:1fr; }
+      .contact { padding:75px 20px; }
+      .contact-wrap { grid-template-columns:1fr; gap:35px; }
+      form { padding:24px 19px; }
+      .form-row { grid-template-columns:1fr; gap:0; }
+      .footer-main { flex-direction:column; }
+      .footer-links { gap:45px; }
+      .copyright { flex-direction:column; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="announcement">A thoughtful online presence for growing businesses — <a href="https://creativetugs.com/" target="_blank" rel="noopener">Creative Tugs</a> · <a href="https://calendly.com/creativetugs/30min" target="_blank" rel="noopener">Book a free consultation</a></div>
+  <div class="topline"><span>TARporley · CHESHIRE · UNITED KINGDOM</span><span>AROMATHERAPY · MASSAGE · WELLBEING</span></div>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Louise Moore home">
+        <img class="brand-logo" src="assets/oulton-garden-studio-logo.png" alt="Oulton Garden Studio logo">
+        <span class="brand-name"><strong>Oulton Garden Studio</strong><small>Pilates · Yoga · Massage & Aromatherapy</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav>
+        <a href="#treatments">Treatments</a><a href="#about">About Louise</a><a href="#mobile">Mobile Massage</a><a href="#kind-words">Kind Words</a><a class="nav-cta" href="#contact">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">A moment to reconnect</span>
+        <h1>A little time for you. <em>A world of wellbeing.</em></h1>
+        <p>Discover the restorative pleasure of aromatherapy, personalised massage and thoughtful wellness experiences. Slow down, take a breath and enjoy a moment that is entirely yours.</p>
+        <div class="hero-actions"><a class="btn" href="#contact">Enquire about a treatment</a><a class="btn-outline" href="#treatments">Explore treatments</a></div>
+        <div class="hero-note">The Barn, Oulton Smithy · Tarporley, Cheshire</div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/louise-treatment.png" alt="Louise providing a facial treatment at the wellness studio">
+        <div class="image-caption">Make space to feel good.</div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <span class="eyebrow">The Barn Oulton Smithy Wellness</span>
+      <h2>Make space to <em>feel good again.</em></h2>
+      <p>Step away from the everyday and enjoy a little time dedicated to you. At The Barn, Louise offers a thoughtful range of massage and facial treatments, with a personal approach and a peaceful setting.</p>
+      <div class="signature">Louise x</div>
+    </section>
+
+    <section class="services" id="treatments">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">The Barn · Oulton Smithy Wellness</span>
+          <h2>Treatments & <em>prices</em></h2>
+          <p>Take a look through Louise's current treatment menu. Each treatment offers time to slow down, relax and enjoy some dedicated care.</p>
+        </div>
+        <p class="menu-intro">Choose the treatment that feels right for you. If you're unsure, get in touch with Louise to discuss the options and check availability.</p>
+        <div class="menu-grid">
+          <article class="treatment-card">
+            <div class="treatment-top"><h3>Full Body Massage</h3><span class="treatment-price">£70</span></div>
+            <div class="treatment-meta">50 mins hands-on time</div>
+            <p>Deeply relaxing full body massage using a mix of gentle aromatherapy massage with more firm passive stretching and Shiatsu pressure point releases to suit you. Your therapist will discuss your specific areas of tension, providing a soothing, calming and personalised experience.</p>
+            <a class="text-link" href="#contact" data-treatment="Full Body Massage">Enquire about this treatment</a>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-top"><h3>R&R Massage Treatment</h3><span class="treatment-price">£65</span></div>
+            <div class="treatment-meta">50 mins hands-on time · Signature treatment</div>
+            <p>Our signature treatment. Ease away knots, aches and tension with this transformative back, neck, shoulder massage concluding with a facial pressure point and scalp massage, leaving you floating on air. Our most popular treatment requested time and time again.</p>
+            <a class="text-link" href="#contact" data-treatment="R&R Massage Treatment">Enquire about this treatment</a>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-top"><h3>Heavenly Leg & Foot Pamper</h3><span class="treatment-price">£60</span></div>
+            <div class="treatment-meta">45 mins hands-on time</div>
+            <p>Ideal for achy legs and feet, enjoy a foot soak with essential oils, soothing hot towel steam followed by a salt scrub and then warm oil massage on both legs and feet to relieve tension and stress and leave your feet baby soft.</p>
+            <a class="text-link" href="#contact" data-treatment="Heavenly Leg & Foot Pamper">Enquire about this treatment</a>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-top"><h3>Luxury Facial Treatment</h3><span class="treatment-price">£70</span></div>
+            <div class="treatment-meta">55 mins hands-on time</div>
+            <p>7 stage luxurious bespoke facial using finest quality organic products. Includes double cleanse, luxe mask, neck & shoulder massage, hot towel steams and concluding with a dreamy scalp and facial massage.</p>
+            <a class="text-link" href="#contact" data-treatment="Luxury Facial Treatment">Enquire about this treatment</a>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-top"><h3>Indian Head Massage</h3><span class="treatment-price">£55</span></div>
+            <div class="treatment-meta">45 mins hands-on time</div>
+            <p>Using warm oils, balms & hot towels this treatment leaves you in a state of deep relaxation. Shoulder, neck and head massage with facial massage and scalp massage - so relaxing, using Shiatsu pressure points.</p>
+            <a class="text-link" href="#contact" data-treatment="Indian Head Massage">Enquire about this treatment</a>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-top"><h3>Mini Treatments</h3><span class="treatment-price">£45</span></div>
+            <div class="treatment-meta">35 mins hands-on time · Groups of 3 or 4</div>
+            <p>Shorter treatments for groups looking to maximise their experience in the barn. Choose from a back, neck, shoulder massage, Indian head massage or foot and leg massage. For groups of 3 or 4 people.</p>
+            <a class="text-link" href="#contact" data-treatment="Mini Treatments / Group booking">Enquire about a group</a>
+          </article>
+        </div>
+        <p class="menu-note">Treatments take place in The Barn itself. Available for both men and women aged 16+ and during pregnancy from 14 weeks+.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-photos">
+        <img src="assets/louise-portrait.png" alt="Louise Moore, therapist at Oulton Garden Studio">
+        <img src="assets/aromatherapy-oils.png" alt="Aromatherapy oils and treatment preparation">
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">A personal approach to wellbeing</span>
+        <h2>Meet <em>Louise.</em></h2>
+        <p>Louise is the therapist behind the treatments at The Barn Oulton Smithy Wellness. Her approach is personal and thoughtful, taking time to understand what you need from your treatment and creating a welcoming space where you can pause, unwind and feel looked after.</p>
+        <p>From her signature R&R massage to a bespoke facial or a deeply relaxing full body massage, Louise's focus is on making your treatment feel considered, calming and tailored to you.</p>
+        <a class="btn" href="#contact">Ask Louise about a treatment</a>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="values-grid">
+        <div class="value"><div class="value-icon">✧</div><h3>Personalised care</h3><p>Treatments shaped around your preferences and needs.</p></div>
+        <div class="value"><div class="value-icon">❋</div><h3>A calm welcome</h3><p>A comfortable space to pause and focus on yourself.</p></div>
+        <div class="value"><div class="value-icon">⌁</div><h3>Holistic wellbeing</h3><p>A thoughtful mix of massage, aromatherapy and wellness.</p></div>
+        <div class="value"><div class="value-icon">♡</div><h3>Flexible options</h3><p>Resident treatments and local mobile massage enquiries.</p></div>
+      </div>
+    </section>
+
+    <section class="mobile" id="mobile">
+      <img src="assets/wellness-room.png" alt="Relaxing room at the wellness studio">
+      <div class="mobile-copy">
+        <span class="eyebrow">Wellbeing, wherever you are</span>
+        <h2>A little calm, <em>closer to home.</em></h2>
+        <p>Louise is back to offering mobile massage treatments in the local area. If you'd prefer to enjoy a massage in your own surroundings, send Louise a message to ask about availability and the mobile treatment options.</p>
+        <div class="mobile-update">“I’m back to doing mobile massage treatments in the local area 🥰🙌🏻 Here’s my up-to-date treatment menu below… Feel free to DM me to book/check availability. Louise x”</div><div style="margin-top:22px"><a class="btn" href="#contact">Enquire about mobile massage</a></div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="kind-words">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Kind words from clients</span>
+          <h2>Experiences worth <em>sharing.</em></h2>
+          <p>A few words from people who have enjoyed time with Louise.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="quote"><div class="stars">★★★★★</div><blockquote>“Can highly recommend Lou's garden studio. Just had a golden facial treatment, so relaxing. Lovely to switch off and enjoy being pampered. Will be going back very soon.”</blockquote><strong>Deb Burton</strong><small>16 November 2021</small><div class="source">Facebook recommendation</div></article>
+          <article class="quote"><div class="stars">★★★★★</div><blockquote>“I can highly recommend an aromatherapy massage and facial with Louise. The atmosphere is calm and relaxing and very professional with tailored treatments which left my skin soft and toned and tired muscles renewed.”</blockquote><strong>Debbie Mercer</strong><small>30 October 2021</small><div class="source">Facebook recommendation</div></article>
+          <article class="quote"><div class="stars">★★★★★</div><blockquote>“Had the most amazing pampering today with Louise ... Louise was very professional and personalised the treatments to suit my needs.”</blockquote><strong>Cat Beresford</strong><small>6 October 2021</small><div class="source">Facebook recommendation</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-wrap">
+        <div class="contact-copy">
+          <span class="eyebrow">Your next moment of calm</span>
+          <h2>Ready to make time for <em>yourself?</em></h2>
+          <p>Whether you have a treatment in mind or would like a little guidance, Louise would love to hear from you. Send an enquiry and ask about the current treatment menu and availability.</p>
+          <div class="contact-detail">
+            <div>☎ &nbsp; <a href="tel:+447814401316">+44 7814 401316</a></div>
+            <div>✉ &nbsp; <a href="mailto:oultonsmithy@outlook.com">oultonsmithy@outlook.com</a></div>
+            <div>⌖ &nbsp; The Barn, Oulton Smithy · Tarporley, Cheshire, CW6 9BJ</div>
+            <div>◎ &nbsp; @cheshire_aromatherapist</div>
+          </div>
+        </div>
+        <form id="enquiry-form">
+          <div class="form-row">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="Name"></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" required placeholder="Email"></div>
+          </div>
+          <div class="field"><label for="interest">I'm interested in</label><select id="interest" name="interest"><option>Full Body Massage — £70</option><option>R&R Massage Treatment — £65</option><option>Heavenly Leg & Foot Pamper — £60</option><option>Luxury Facial Treatment — £70</option><option>Indian Head Massage — £55</option><option>Mini Treatments / Group booking — £45</option><option>Mobile massage enquiry</option><option>I would like some advice</option></select></div>
+          <div class="field"><label for="message">Your message</label><textarea id="message" name="message" placeholder="Tell Louise a little about what you're looking for..."></textarea></div>
+          <button class="btn" type="submit">Prepare my enquiry</button>
+          <p class="form-note">This concept form opens your email app with the enquiry details. A live website can connect this form to a secure booking or enquiry system.</p>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <span class="eyebrow">Your time · Your wellbeing · Your moment</span>
+      <h2>Make room for a little <em>more you.</em></h2>
+      <p>Discover your next treatment with Louise Moore Aromatherapy & Wellness.</p>
+      <a class="btn" href="tel:+447814401316">Call Louise · 07814 401316</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="brand" href="#home"><img class="brand-logo" src="assets/oulton-garden-studio-logo.png" alt="Oulton Garden Studio logo"><span class="brand-name"><strong style="color:#fff">Oulton Garden Studio</strong><small style="color:#c4cec2">Pilates · Yoga · Massage & Aromatherapy</small></span></a>
+        <p>Massage, aromatherapy and wellness treatments at The Barn Oulton Smithy, Tarporley, Cheshire. Local mobile massage enquiries welcome.</p>
+      </div>
+      <div class="footer-links">
+        <div><h4>Explore</h4><a href="#treatments">Treatments</a><a href="#about">About Louise</a><a href="#mobile">Mobile Massage</a><a href="#kind-words">Kind Words</a></div>
+        <div><h4>Get in touch</h4><a href="tel:+447814401316">+44 7814 401316</a><a href="mailto:oultonsmithy@outlook.com">Email Louise</a><a href="#contact">Make an enquiry</a></div>
+      </div>
+    </div>
+    <div class="copyright"><span>© <span id="year"></span> Louise Moore Aromatherapy & Wellness</span><span>Website concept by <a href="https://creativetugs.com/" target="_blank" rel="noopener">Creative Tugs</a></span></div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('[data-treatment]').forEach(link => link.addEventListener('click', () => {
+      const select = document.getElementById('interest');
+      const wanted = link.dataset.treatment;
+      const match = Array.from(select.options).find(option => option.text.toLowerCase().startsWith(wanted.toLowerCase()));
+      if (match) select.value = match.value;
+    }));
+    document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      const subject = encodeURIComponent('Treatment enquiry from ' + data.get('name'));
+      const body = encodeURIComponent(
+        'Name: ' + data.get('name') + '\\nEmail: ' + data.get('email') +
+        '\\nInterested in: ' + data.get('interest') + '\\n\\nMessage:\\n' + data.get('message')
+      );
+      document.getElementById('form-status').style.display = 'block';
+      document.getElementById('form-status').textContent = 'Opening your email app with your enquiry details…';
+      window.location.href = 'mailto:oultonsmithy@outlook.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
